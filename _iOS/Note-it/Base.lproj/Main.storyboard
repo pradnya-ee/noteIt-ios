@@ -17,15 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t78-Qb-qv6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t78-Qb-qv6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="EAX-qL-Kbv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGf-gF-rMV">
-                                            <rect key="frame" x="20" y="7" width="291" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add note" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGf-gF-rMV">
+                                            <rect key="frame" x="28" y="7" width="283" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="M4t-Y9-q9H"/>
                                             </constraints>
@@ -56,12 +57,12 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="aGf-gF-rMV" secondAttribute="centerY" id="2Oj-nD-3G2"/>
                                         <constraint firstAttribute="trailing" secondItem="o8x-Xk-aod" secondAttribute="trailing" constant="20" id="4u7-N6-wMR"/>
                                         <constraint firstAttribute="centerY" secondItem="o8x-Xk-aod" secondAttribute="centerY" id="5jv-9o-um7"/>
-                                        <constraint firstItem="aGf-gF-rMV" firstAttribute="leading" secondItem="EAX-qL-Kbv" secondAttribute="leading" constant="20" id="GpK-Vt-iHG"/>
+                                        <constraint firstItem="aGf-gF-rMV" firstAttribute="leading" secondItem="EAX-qL-Kbv" secondAttribute="leading" constant="28" id="GpK-Vt-iHG"/>
                                         <constraint firstItem="o8x-Xk-aod" firstAttribute="top" secondItem="EAX-qL-Kbv" secondAttribute="top" constant="10" id="IcR-u5-3Xx"/>
                                         <constraint firstAttribute="centerX" secondItem="o8x-Xk-aod" secondAttribute="centerX" id="Nmy-WH-taj"/>
                                         <constraint firstItem="o8x-Xk-aod" firstAttribute="leading" secondItem="aGf-gF-rMV" secondAttribute="trailing" constant="20" id="qbT-A7-0Wz"/>
@@ -104,7 +105,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Ob0-6f-o4m" secondAttribute="trailing" constant="20" id="9Ac-zw-gWT"/>
                                                 <constraint firstAttribute="centerY" secondItem="Ob0-6f-o4m" secondAttribute="centerY" id="Lyi-P9-ynv"/>
                                                 <constraint firstItem="Ob0-6f-o4m" firstAttribute="leading" secondItem="RkH-9x-2NX" secondAttribute="trailing" constant="20" id="VCg-VU-dwV"/>
-                                                <constraint firstItem="RkH-9x-2NX" firstAttribute="leading" secondItem="S0w-dC-fCM" secondAttribute="leadingMargin" constant="20" id="dWn-JT-i0M"/>
+                                                <constraint firstItem="RkH-9x-2NX" firstAttribute="leading" secondItem="S0w-dC-fCM" secondAttribute="leading" constant="28" id="dur-Qb-CgO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ob0-6f-o4m" secondAttribute="trailing" constant="20" id="rd8-qF-sPT"/>
                                             </constraints>
                                             <variation key="default">
@@ -113,6 +114,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="noteText" destination="RkH-9x-2NX" id="4N1-YY-omb"/>
                                         </connections>
@@ -120,7 +122,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.99185929888309676" blue="0.64565910526116865" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="t78-Qb-qv6" secondAttribute="trailing" id="0iv-Lm-Pfc"/>
                             <constraint firstItem="t78-Qb-qv6" firstAttribute="top" secondItem="uJq-VJ-SIe" secondAttribute="bottom" id="4E7-G5-7lm"/>
