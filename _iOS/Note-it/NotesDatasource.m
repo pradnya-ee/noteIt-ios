@@ -2,7 +2,6 @@
 
 NSString * const VIEW_NOTE_CELL_IDENTIFIER = @"view-note";
 NSString * const CREATE_NOTE_CELL_IDENTIFIER = @"create-note";
-NSString * const NOTES_LIST_UPDATED = @"NOTES_LIST_UPDATED";
 
 @implementation NotesDatasource
 

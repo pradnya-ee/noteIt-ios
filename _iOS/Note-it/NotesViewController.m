@@ -8,14 +8,17 @@
 @implementation NotesViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
     
-    //setting up datasource and delegates
+    //setting up datasource for table
     _notesDatasource = [NotesDatasource new];
     [self.tableView setDataSource:_notesDatasource];
     [self.tableView setDelegate:_notesDatasource];
     _notesDatasource.tableView = _tableView;
+    
+    //to dismiss keyboard on tap..
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
