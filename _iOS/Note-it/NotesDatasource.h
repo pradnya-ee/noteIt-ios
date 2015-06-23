@@ -13,4 +13,6 @@ extern NSString * const NOTES_LIST_UPDATED;
 
 @interface NotesDatasource : NSObject<UITableViewDataSource, UITableViewDelegate, NotesCellDelegate>
 @property NSMutableArray *notes;
+@property (weak) UITableView *tableView;
+-(void)addNote:(NSString *)note;
 @end

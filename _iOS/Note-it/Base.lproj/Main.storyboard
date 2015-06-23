@@ -20,26 +20,98 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t78-Qb-qv6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="EAX-qL-Kbv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGf-gF-rMV">
+                                            <rect key="frame" x="20" y="7" width="291" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="M4t-Y9-q9H"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="See-KN-hck" id="UDG-6C-Wnr"/>
+                                            </connections>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8x-Xk-aod">
+                                            <rect key="frame" x="331" y="10" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="43d-UL-0gl"/>
+                                                <constraint firstAttribute="width" constant="24" id="UTd-ag-Jpj"/>
+                                                <constraint firstAttribute="height" constant="20" id="XZH-A3-5RF"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="plus-sign.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="43d-UL-0gl"/>
+                                                    <exclude reference="XZH-A3-5RF"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="addNote:" destination="See-KN-hck" eventType="touchUpInside" id="2Z9-QS-M4c"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="aGf-gF-rMV" secondAttribute="centerY" id="2Oj-nD-3G2"/>
+                                        <constraint firstAttribute="trailing" secondItem="o8x-Xk-aod" secondAttribute="trailing" constant="20" id="4u7-N6-wMR"/>
+                                        <constraint firstAttribute="centerY" secondItem="o8x-Xk-aod" secondAttribute="centerY" id="5jv-9o-um7"/>
+                                        <constraint firstItem="aGf-gF-rMV" firstAttribute="leading" secondItem="EAX-qL-Kbv" secondAttribute="leading" constant="20" id="GpK-Vt-iHG"/>
+                                        <constraint firstItem="o8x-Xk-aod" firstAttribute="top" secondItem="EAX-qL-Kbv" secondAttribute="top" constant="10" id="IcR-u5-3Xx"/>
+                                        <constraint firstAttribute="centerX" secondItem="o8x-Xk-aod" secondAttribute="centerX" id="Nmy-WH-taj"/>
+                                        <constraint firstItem="o8x-Xk-aod" firstAttribute="leading" secondItem="aGf-gF-rMV" secondAttribute="trailing" constant="20" id="qbT-A7-0Wz"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Nmy-WH-taj"/>
+                                        </mask>
+                                    </variation>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="view-note" id="FLd-93-pCq" customClass="ViewNoteCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FLd-93-pCq" id="S0w-dC-fCM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="note text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkH-9x-2NX">
-                                                    <rect key="frame" x="38" y="11" width="254" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-6f-o4m">
-                                                    <rect key="frame" x="333" y="11" width="22" height="22"/>
-                                                    <state key="normal" title="X"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-6f-o4m">
+                                                    <rect key="frame" x="331" y="10" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="eNH-eE-IeI"/>
+                                                        <constraint firstAttribute="height" constant="24" id="rqP-BE-xoa"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="minus-sign.png"/>
                                                     <connections>
                                                         <action selector="deleteNote:" destination="FLd-93-pCq" eventType="touchUpInside" id="IfP-GB-srr"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="note text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkH-9x-2NX">
+                                                    <rect key="frame" x="28" y="10" width="283" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="8iv-hg-ZyS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="RkH-9x-2NX" secondAttribute="centerY" id="72D-yR-3HT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ob0-6f-o4m" secondAttribute="trailing" constant="20" id="9Ac-zw-gWT"/>
+                                                <constraint firstAttribute="centerY" secondItem="Ob0-6f-o4m" secondAttribute="centerY" id="Lyi-P9-ynv"/>
+                                                <constraint firstItem="Ob0-6f-o4m" firstAttribute="leading" secondItem="RkH-9x-2NX" secondAttribute="trailing" constant="20" id="VCg-VU-dwV"/>
+                                                <constraint firstItem="RkH-9x-2NX" firstAttribute="leading" secondItem="S0w-dC-fCM" secondAttribute="leadingMargin" constant="20" id="dWn-JT-i0M"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ob0-6f-o4m" secondAttribute="trailing" constant="20" id="rd8-qF-sPT"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="rd8-qF-sPT"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="noteText" destination="RkH-9x-2NX" id="4N1-YY-omb"/>
@@ -72,12 +144,17 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="noteTextToAdd" destination="aGf-gF-rMV" id="gnm-tA-wUn"/>
                         <outlet property="tableView" destination="t78-Qb-qv6" id="ePz-uR-Wzh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJz-xh-yCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-326.5" y="-205.5"/>
+            <point key="canvasLocation" x="-194.5" y="-203.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus-sign.png" width="128" height="128"/>
+        <image name="plus-sign.png" width="128" height="128"/>
+    </resources>
 </document>

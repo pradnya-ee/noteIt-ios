@@ -42,10 +42,21 @@ NSString * const NOTES_LIST_UPDATED = @"NOTES_LIST_UPDATED";
     return 1;
 }
 
+#pragma mark - NotesCellDelegate
+
 -(void) deleteNoteWithIndex:(NSInteger)index
 {
     [_notes removeObjectAtIndex:index];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTES_LIST_UPDATED object:self];
+
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath  indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Add Note
+-(void)addNote:(NSString *)note{
+    [_notes addObject:note];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:(_notes.count-1) inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 @end

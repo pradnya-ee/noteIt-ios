@@ -13,9 +13,11 @@
 		4C9F64EB1B37EE2F00FD93B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F64EA1B37EE2F00FD93B0 /* AppDelegate.m */; };
 		4C9F64EE1B37EE2F00FD93B0 /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F64ED1B37EE2F00FD93B0 /* NotesViewController.m */; };
 		4C9F64F11B37EE2F00FD93B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F64EF1B37EE2F00FD93B0 /* Main.storyboard */; };
-		4C9F64F31B37EE2F00FD93B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F64F21B37EE2F00FD93B0 /* Images.xcassets */; };
 		4C9F64F61B37EE2F00FD93B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F64F41B37EE2F00FD93B0 /* LaunchScreen.xib */; };
 		4C9F65021B37EE2F00FD93B0 /* Note_itTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F65011B37EE2F00FD93B0 /* Note_itTests.m */; };
+		4CD280901B3966CD00864A97 /* minus-sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2808E1B3966CD00864A97 /* minus-sign.png */; };
+		4CD280911B3966CD00864A97 /* plus-sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD2808F1B3966CD00864A97 /* plus-sign.png */; };
+		4CD280931B39795900864A97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD280921B39795900864A97 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +43,14 @@
 		4C9F64EC1B37EE2F00FD93B0 /* NotesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesViewController.h; sourceTree = "<group>"; };
 		4C9F64ED1B37EE2F00FD93B0 /* NotesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesViewController.m; sourceTree = "<group>"; };
 		4C9F64F01B37EE2F00FD93B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4C9F64F21B37EE2F00FD93B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C9F64F51B37EE2F00FD93B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4C9F64FB1B37EE2F00FD93B0 /* Note-itTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Note-itTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9F65001B37EE2F00FD93B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9F65011B37EE2F00FD93B0 /* Note_itTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note_itTests.m; sourceTree = "<group>"; };
 		4CD2808D1B3958FD00864A97 /* NotesCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesCellDelegate.h; sourceTree = "<group>"; };
+		4CD2808E1B3966CD00864A97 /* minus-sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "minus-sign.png"; path = "../../../../../Downloads/minus-sign.png"; sourceTree = "<group>"; };
+		4CD2808F1B3966CD00864A97 /* plus-sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-sign.png"; path = "../../../../../Downloads/plus-sign.png"; sourceTree = "<group>"; };
+		4CD280921B39795900864A97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Note-it/Images.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,16 +78,8 @@
 				4C9F64ED1B37EE2F00FD93B0 /* NotesViewController.m */,
 				4C085E971B3825C900DC22F0 /* NotesDatasource.h */,
 				4C085E981B3825C900DC22F0 /* NotesDatasource.m */,
-				4CD2808D1B3958FD00864A97 /* NotesCellDelegate.h */,
 			);
 			name = controller;
-			sourceTree = "<group>";
-		};
-		4C085E941B381F9000DC22F0 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
 			sourceTree = "<group>";
 		};
 		4C085E951B381F9D00DC22F0 /* view */ = {
@@ -136,10 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				4C085E961B381FB400DC22F0 /* app_delegate */,
-				4C085E951B381F9D00DC22F0 /* view */,
-				4C085E941B381F9000DC22F0 /* model */,
 				4C085E931B381F3700DC22F0 /* controller */,
-				4C9F64F21B37EE2F00FD93B0 /* Images.xcassets */,
+				4C085E951B381F9D00DC22F0 /* view */,
+				4CD280951B3979DA00864A97 /* delegates */,
+				4CD280941B39796B00864A97 /* assets */,
 				4C9F64E51B37EE2F00FD93B0 /* Supporting Files */,
 			);
 			path = "Note-it";
@@ -169,6 +165,25 @@
 				4C9F65001B37EE2F00FD93B0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CD280941B39796B00864A97 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				4CD2808E1B3966CD00864A97 /* minus-sign.png */,
+				4CD2808F1B3966CD00864A97 /* plus-sign.png */,
+				4CD280921B39795900864A97 /* Images.xcassets */,
+			);
+			name = assets;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4CD280951B3979DA00864A97 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4CD2808D1B3958FD00864A97 /* NotesCellDelegate.h */,
+			);
+			name = delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9F64F11B37EE2F00FD93B0 /* Main.storyboard in Resources */,
+				4CD280931B39795900864A97 /* Images.xcassets in Resources */,
 				4C9F64F61B37EE2F00FD93B0 /* LaunchScreen.xib in Resources */,
-				4C9F64F31B37EE2F00FD93B0 /* Images.xcassets in Resources */,
+				4CD280901B3966CD00864A97 /* minus-sign.png in Resources */,
+				4CD280911B3966CD00864A97 /* plus-sign.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

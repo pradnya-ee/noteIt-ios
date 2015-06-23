@@ -16,22 +16,34 @@
 @implementation NotesViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    //setting up datasource and delegates
     _notesDatasource = [NotesDatasource new];
     [self.tableView setDataSource:_notesDatasource];
     [self.tableView setDelegate:_notesDatasource];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateNotesList) name:NOTES_LIST_UPDATED object:nil];
+    _notesDatasource.tableView = _tableView;
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [self.tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)addNote:(id)sender {
+    [self dismissKeyboard];
+    [_notesDatasource addNote:self.noteTextToAdd.text];
+    self.noteTextToAdd.text = @"";
 }
 
--(void)updateNotesList{
-    [self.tableView reloadData];
+-(void)dismissKeyboard{
+    [_noteTextToAdd resignFirstResponder];
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end
