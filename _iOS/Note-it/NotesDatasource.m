@@ -1,0 +1,51 @@
+//
+//  NotesDatasource.m
+//  Note-it
+//
+//  Created by Pradnya Nikam on 22/06/15.
+//  Copyright (c) 2015 Prad. All rights reserved.
+//
+
+#import "NotesDatasource.h"
+
+NSString * const VIEW_NOTE_CELL_IDENTIFIER = @"view-note";
+NSString * const CREATE_NOTE_CELL_IDENTIFIER = @"create-note";
+NSString * const NOTES_LIST_UPDATED = @"NOTES_LIST_UPDATED";
+
+@implementation NotesDatasource
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        _notes = [NSMutableArray arrayWithObjects:@"buy milk",@"pay bills",@"pay more bills!", nil];
+    }
+    return self;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _notes.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ViewNoteCell *viewNoteCell = (ViewNoteCell *)[tableView dequeueReusableCellWithIdentifier:VIEW_NOTE_CELL_IDENTIFIER];
+    [viewNoteCell.noteText setText:_notes[indexPath.row]];
+    viewNoteCell.index = indexPath.row;
+    viewNoteCell.notesCellDelegate = self;
+    return viewNoteCell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(void) deleteNoteWithIndex:(NSInteger)index
+{
+    [_notes removeObjectAtIndex:index];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTES_LIST_UPDATED object:self];
+}
+
+@end
